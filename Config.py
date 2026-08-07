@@ -1,0 +1,27 @@
+HOST = "127.0.0.1"
+
+PORT = 8000
+
+WEBSOCKET_PORT = 8765
+
+SIMULATION_MODE = True
+
+CSV_FILE = "../data/sensor_data.csv"
+
+EVENT_FILE = "../data/events.csv"
+
+AI_FILE = "../data/ai_training.csv"
+
+UPDATE_INTERVAL = 0.2
+
+MAX_HISTORY = 100
+
+TEMPERATURE_LIMIT = 45
+
+SMOKE_LIMIT = 350
+
+GAS_LIMIT = 400
+
+WATER_LIMIT = 40
+
+BATTERY_LOW = 20
