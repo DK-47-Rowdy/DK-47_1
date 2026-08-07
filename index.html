@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portable Safety Camp AI</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Header -->
+    <header>
+
+        <h1>🏕 AI Portable Safety Camp</h1>
+
+        <div class="header-right">
+
+            <span id="status">🟢 SAFE</span>
+
+            <span id="clock">00:00:00</span>
+
+        </div>
+
+    </header>
+
+    <!-- Gauges -->
+
+    <section class="gauges">
+
+        <div class="card">
+            <h3>🌡 Temperature</h3>
+            <div id="tempGauge" class="gauge"></div>
+        </div>
+
+        <div class="card">
+            <h3>💧 Humidity</h3>
+            <div id="humidityGauge" class="gauge"></div>
+        </div>
+
+        <div class="card">
+            <h3>💨 Smoke</h3>
+            <div id="smokeGauge" class="gauge"></div>
+        </div>
+
+        <div class="card">
+            <h3>⛽ Gas</h3>
+            <div id="gasGauge" class="gauge"></div>
+        </div>
+
+        <div class="card">
+            <h3>🌊 Water</h3>
+            <div id="waterGauge" class="gauge"></div>
+        </div>
+
+        <div class="card">
+            <h3>☀ Solar</h3>
+            <div id="solarGauge" class="gauge"></div>
+        </div>
+
+        <div class="card">
+            <h3>🔋 Battery</h3>
+            <div id="batteryGauge" class="gauge"></div>
+        </div>
+
+        <div class="card">
+            <h3>📡 Wi-Fi</h3>
+            <div class="placeholder connected">CONNECTED</div>
+        </div>
+
+    </section>
+
+    <!-- Bottom Panels -->
+
+    <section class="bottom">
+
+        <div class="panel">
+            <h2>📈 Live Sensor Graph</h2>
+        </div>
+
+        <div class="panel">
+            <h2>🤖 AI Prediction</h2>
+        </div>
+
+        <div class="panel">
+            <h2>🗺 Camp Layout</h2>
+        </div>
+
+        <div class="panel">
+            <h2>📜 Event Timeline</h2>
+        </div>
+
+    </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+<script src="/static/js/gauges.js"></script>
+
+<script src="/static/js/dashboard.js"></script>
+
+</body>
+
+</html>
