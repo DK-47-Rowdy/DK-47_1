@@ -4,112 +4,942 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portable Safety Camp AI</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="/static/css/style.css">
+    <title>AI Portable Safety Camp</title>
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
 
 </head>
 
 
 <body>
 
-<div class="dashboard">
 
-    <!-- Header -->
-    <header>
+<div class="app-shell">
 
-        <h1>🏕 AI Portable Safety Camp</h1>
 
-        <div class="header-right">
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
 
-            <span id="status">🟢 SAFE</span>
+    <header class="topbar">
 
-            <span id="clock">00:00:00</span>
+        <div class="brand">
+
+            <div class="brand-icon">
+
+                <i class="fa-solid fa-tent"></i>
+
+            </div>
+
+
+            <div>
+
+                <h1>
+                    AI PORTABLE SAFETY CAMP
+                </h1>
+
+                <p>
+                    INTELLIGENT HUMANITARIAN DISASTER MONITORING SYSTEM
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="system-status">
+
+            <span class="status-indicator"></span>
+
+            SYSTEM ONLINE
+
+            <span
+                class="clock"
+                id="clock"
+            >
+                --:--:--
+            </span>
 
         </div>
 
     </header>
 
-    <!-- Gauges -->
 
-    <section class="gauges">
 
-        <div class="card">
-            <h3>🌡 Temperature</h3>
-            <div id="tempGauge" class="gauge"></div>
-        </div>
+    <main>
 
-        <div class="card">
-            <h3>💧 Humidity</h3>
-            <div id="humidityGauge" class="gauge"></div>
-        </div>
 
-        <div class="card">
-            <h3>💨 Smoke</h3>
-            <div id="smokeGauge" class="gauge"></div>
-        </div>
+        <!-- =================================================
+             ENVIRONMENTAL MONITORING
+             ================================================= -->
 
-        <div class="card">
-            <h3>⛽ Gas</h3>
-            <div id="gasGauge" class="gauge"></div>
-        </div>
+        <section class="section-heading">
 
-        <div class="card">
-            <h3>🌊 Water</h3>
-            <div id="waterGauge" class="gauge"></div>
-        </div>
+            <div>
 
-        <div class="card">
-            <h3>☀ Solar</h3>
-            <div id="solarGauge" class="gauge"></div>
-        </div>
+                <span class="section-label">
+                    ENVIRONMENTAL MONITORING
+                </span>
 
-        <div class="card">
-            <h3>🔋 Battery</h3>
-            <div id="batteryGauge" class="gauge"></div>
-        </div>
+                <h2>
+                    ENVIRONMENTAL MONITORING
+                </h2>
 
-        <div class="card">
-            <h3>📡 Wi-Fi</h3>
-            <div class="placeholder connected">CONNECTED</div>
-        </div>
+            </div>
 
-    </section>
 
-    <!-- Bottom Panels -->
+            <div class="connection-badge">
 
-    <section class="bottom">
+                <span class="connection-dot"></span>
 
-        <div class="panel">
-            <h2>📈 Live Sensor Graph</h2>
-        </div>
+                ESP32 LINK:
 
-        <div class="panel">
-            <h2>🤖 AI Prediction</h2>
-        </div>
+                <strong id="topConnectionStatus">
+                    WAITING
+                </strong>
 
-        <div class="panel">
-            <h2>🗺 Camp Layout</h2>
-        </div>
+            </div>
 
-        <div class="panel">
-            <h2>📜 Event Timeline</h2>
-        </div>
+        </section>
 
-    </section>
+
+
+        <!-- =================================================
+             SENSOR GRID
+             ================================================= -->
+
+        <section class="sensor-grid">
+
+
+            <!-- TEMPERATURE -->
+
+            <article class="sensor-card temperature">
+
+                <div class="sensor-header">
+
+                    <div class="sensor-name">
+
+                        <div class="sensor-icon">
+
+                            <i class="fa-solid fa-temperature-half"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Temperature
+                            </h3>
+
+                            <p>
+                                AMBIENT THERMAL SENSOR
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <span class="sensor-code">
+                        TMP-01
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="gauge-container"
+                    id="temperatureGauge"
+                ></div>
+
+
+                <div class="sensor-reading">
+
+                    <span
+                        class="reading-value"
+                        id="temperatureValue"
+                    >
+                        25.0
+                    </span>
+
+                    <span class="reading-unit">
+                        °C
+                    </span>
+
+                </div>
+
+
+                <div class="sensor-footer">
+
+                    <span>
+                        RANGE 0–60°C
+                    </span>
+
+                    <span>
+                        LIVE
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- HUMIDITY -->
+
+            <article class="sensor-card humidity">
+
+                <div class="sensor-header">
+
+                    <div class="sensor-name">
+
+                        <div class="sensor-icon">
+
+                            <i class="fa-solid fa-droplet"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Humidity
+                            </h3>
+
+                            <p>
+                                RELATIVE AIR MOISTURE
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <span class="sensor-code">
+                        HUM-02
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="gauge-container"
+                    id="humidityGauge"
+                ></div>
+
+
+                <div class="sensor-reading">
+
+                    <span
+                        class="reading-value"
+                        id="humidityValue"
+                    >
+                        55.0
+                    </span>
+
+                    <span class="reading-unit">
+                        %
+                    </span>
+
+                </div>
+
+
+                <div class="sensor-footer">
+
+                    <span>
+                        RANGE 0–100%
+                    </span>
+
+                    <span>
+                        LIVE
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- SMOKE -->
+
+            <article class="sensor-card smoke">
+
+                <div class="sensor-header">
+
+                    <div class="sensor-name">
+
+                        <div class="sensor-icon">
+
+                            <i class="fa-solid fa-smog"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Smoke Density
+                            </h3>
+
+                            <p>
+                                PARTICULATE DETECTION
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <span class="sensor-code">
+                        SMK-03
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="gauge-container"
+                    id="smokeGauge"
+                ></div>
+
+
+                <div class="sensor-reading">
+
+                    <span
+                        class="reading-value"
+                        id="smokeValue"
+                    >
+                        80
+                    </span>
+
+                    <span class="reading-unit">
+                        PPM
+                    </span>
+
+                </div>
+
+
+                <div class="sensor-footer">
+
+                    <span>
+                        RANGE 0–1000 PPM
+                    </span>
+
+                    <span>
+                        LIVE
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- GAS -->
+
+            <article class="sensor-card gas">
+
+                <div class="sensor-header">
+
+                    <div class="sensor-name">
+
+                        <div class="sensor-icon">
+
+                            <i class="fa-solid fa-flask"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Gas Level
+                            </h3>
+
+                            <p>
+                                ATMOSPHERIC GAS SENSOR
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <span class="sensor-code">
+                        GAS-04
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="gauge-container"
+                    id="gasGauge"
+                ></div>
+
+
+                <div class="sensor-reading">
+
+                    <span
+                        class="reading-value"
+                        id="gasValue"
+                    >
+                        120
+                    </span>
+
+                    <span class="reading-unit">
+                        PPM
+                    </span>
+
+                </div>
+
+
+                <div class="sensor-footer">
+
+                    <span>
+                        RANGE 0–1000 PPM
+                    </span>
+
+                    <span>
+                        LIVE
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- WATER -->
+
+            <article class="sensor-card water">
+
+                <div class="sensor-header">
+
+                    <div class="sensor-name">
+
+                        <div class="sensor-icon">
+
+                            <i class="fa-solid fa-water"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Water Level
+                            </h3>
+
+                            <p>
+                                RESERVOIR CAPACITY
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <span class="sensor-code">
+                        WTR-05
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="gauge-container"
+                    id="waterGauge"
+                ></div>
+
+
+                <div class="sensor-reading">
+
+                    <span
+                        class="reading-value"
+                        id="waterValue"
+                    >
+                        75.0
+                    </span>
+
+                    <span class="reading-unit">
+                        %
+                    </span>
+
+                </div>
+
+
+                <div class="sensor-footer">
+
+                    <span>
+                        CAPACITY 0–100%
+                    </span>
+
+                    <span>
+                        LIVE
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- SOLAR -->
+
+            <article class="sensor-card solar">
+
+                <div class="sensor-header">
+
+                    <div class="sensor-name">
+
+                        <div class="sensor-icon">
+
+                            <i class="fa-solid fa-sun"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Solar Output
+                            </h3>
+
+                            <p>
+                                RENEWABLE POWER INPUT
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <span class="sensor-code">
+                        SOL-06
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="gauge-container"
+                    id="solarGauge"
+                ></div>
+
+
+                <div class="sensor-reading">
+
+                    <span
+                        class="reading-value"
+                        id="solarValue"
+                    >
+                        650
+                    </span>
+
+                    <span class="reading-unit">
+                        W
+                    </span>
+
+                </div>
+
+
+                <div class="sensor-footer">
+
+                    <span>
+                        RANGE 0–1000 W
+                    </span>
+
+                    <span>
+                        LIVE
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- BATTERY -->
+
+            <article class="sensor-card battery">
+
+                <div class="sensor-header">
+
+                    <div class="sensor-name">
+
+                        <div class="sensor-icon">
+
+                            <i class="fa-solid fa-battery-three-quarters"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Battery
+                            </h3>
+
+                            <p>
+                                SYSTEM POWER RESERVE
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <span class="sensor-code">
+                        BAT-07
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="gauge-container"
+                    id="batteryGauge"
+                ></div>
+
+
+                <div class="sensor-reading">
+
+                    <span
+                        class="reading-value"
+                        id="batteryValue"
+                    >
+                        85.0
+                    </span>
+
+                    <span class="reading-unit">
+                        %
+                    </span>
+
+                </div>
+
+
+                <div class="sensor-footer">
+
+                    <span>
+                        RESERVE 0–100%
+                    </span>
+
+                    <span>
+                        LIVE
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 ESP32 LINK
+                 ================================================= -->
+
+            <article class="sensor-card connectivity">
+
+                <div class="sensor-header">
+
+                    <div class="sensor-name">
+
+                        <div class="sensor-icon">
+
+                            <i class="fa-solid fa-microchip"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                ESP32 Link
+                            </h3>
+
+                            <p>
+                                HARDWARE COMMUNICATION
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <span class="sensor-code">
+                        NET-08
+                    </span>
+
+                </div>
+
+
+                <div class="connectivity-display">
+
+                    <div
+                        class="network-ring"
+                        id="espWaiting"
+                    >
+
+                        <i class="fa-solid fa-microchip"></i>
+
+                    </div>
+
+
+                    <div
+                        id="networkStatus"
+                    >
+                        WAITING
+                    </div>
+
+
+                    <div
+                        id="networkAddress"
+                    >
+                        WAITING FOR SENSOR DATA
+                    </div>
+
+                </div>
+
+
+                <div class="sensor-footer">
+
+                    <span>
+                        SERIAL / WI-FI
+                    </span>
+
+                    <span>
+                        LINK STATUS
+                    </span>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ANALYSIS
+             ================================================= -->
+
+        <section class="analysis-grid">
+
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-kicker">
+                            SENSOR ANALYTICS
+                        </span>
+
+                        <h2>
+                            Environmental Data Analysis
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="graph-area">
+
+                    <div class="graph-placeholder">
+
+                        REAL-TIME ANALYTICS MODULE
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-kicker">
+                            AI SAFETY ENGINE
+                        </span>
+
+                        <h2>
+                            Threat Assessment
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ai-status">
+
+                    <div class="ai-icon">
+
+                        <i class="fa-solid fa-brain"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <div id="aiStatus">
+                            ANALYZING
+                        </div>
+
+                        <div id="aiMessage">
+                            Monitoring environmental conditions
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="risk-meter">
+
+                    <div class="risk-header">
+
+                        <span>
+                            CURRENT RISK
+                        </span>
+
+                        <span id="riskValue">
+                            LOW
+                        </span>
+
+                    </div>
+
+
+                    <div class="risk-track">
+
+                        <div
+                            class="risk-fill"
+                            id="riskFill"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ALERTS
+             ================================================= -->
+
+        <section class="alert-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-kicker">
+                        EVENT MONITOR
+                    </span>
+
+                    <h2>
+                        Safety Alerts
+                    </h2>
+
+                </div>
+
+
+                <span class="alert-count">
+                    0 ACTIVE
+                </span>
+
+            </div>
+
+
+            <div class="alert-list">
+
+                <div class="no-alerts">
+
+                    <span>
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            No active threats detected
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer>
+
+        <span>
+            AI PORTABLE SAFETY CAMP
+        </span>
+
+        <span>
+            REAL-TIME HUMANITARIAN MONITORING PLATFORM
+        </span>
+
+    </footer>
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
 
 <script src="/static/js/gauges.js"></script>
 
-<script src="/static/js/dashboard.js"></script>
+<script src="/static/js/app.js"></script>
+
 
 </body>
 
