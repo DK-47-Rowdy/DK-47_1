@@ -1,64 +1,10 @@
-# ============================
-# Backend
-# ============================
-fastapi>=0.116.0
-uvicorn[standard]>=0.35.0
-websockets>=15.0
-python-socketio>=5.13.0
-aiofiles>=24.1.0
-jinja2>=3.1.6
-python-multipart>=0.0.20
-
-# ============================
-# Data Processing
-# ============================
-numpy>=2.3.0
-pandas>=2.3.0
-
-# ============================
-# AI / Machine Learning
-# ============================
-scikit-learn>=1.7.0
-joblib>=1.5.0
-
-# ============================
-# Serial Communication (ESP32)
-# ============================
-pyserial>=3.5
-
-# ============================
-# HTTP Requests
-# ============================
-requests>=2.32.0
-
-# ============================
-# Image Processing (Future ESP32-CAM)
-# ============================
-opencv-python>=4.12.0
-Pillow>=11.3.0
-
-# ============================
-# Camera AI (Future)
-# ============================
-ultralytics>=8.3.0
-
-# ============================
-# Utilities
-# ============================
-python-dotenv>=1.1.0
-colorama>=0.4.6
-
-# ============================
-# Logging
-# ============================
-loguru>=0.7.3
-
-# ============================
-# Data Validation
-# ============================
-pydantic>=2.11.0
-
-# ============================
-# SMS (if using API later)
-# ============================
-twilio>=9.7.0
+fastapi
+uvicorn[standard]
+pandas
+numpy
+plotly
+scikit-learn
+joblib
+pyserial
+requests
+python-dotenv
